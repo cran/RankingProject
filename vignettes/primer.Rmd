@@ -9,18 +9,21 @@ vignette: >
   %\VignetteEncoding{UTF-8}
 header-includes:
   - \usepackage{tikz}
+  - \usepackage{preview}
 ---
 
 ```{r, echo=FALSE, cache=FALSE}
 library(knitr)
-options(tikzMetricsDictionary="tikzDictionary")
+options(tikzMetricsDictionary="tikzDictionary",
+        tikzMetricPackages = c("\\usepackage[utf8]{inputenc}","\\usepackage[T1]{fontenc}",
+                               "\\usetikzlibrary{calc}", "\\usepackage{amssymb}"))
 opts_chunk$set(fig.width=6.5, fig.height=8, cache=FALSE, message=FALSE,
                dev='tikz', external=FALSE,
                out.width=6.5, out.height=8)
 # Fixed issue with dev='tikz' in Windows
 # by setting external=FALSE and a new plot hook, as here:
 # https://github.com/yihui/tikzDevice/issues/60
-knit_hooks$set(plot = function(x, options) {
+knit_hooks$set(crop = NULL, plot = function(x, options) {
   if ('tikz' %in% options$dev && !options$external) {
     hook_plot_tex(x, options)
   } else hook_plot_md(x, options)

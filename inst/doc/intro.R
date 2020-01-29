@@ -1,8 +1,8 @@
-## ---- echo=FALSE, cache=FALSE--------------------------------------------
+## ---- echo=FALSE, cache=FALSE-------------------------------------------------
 library(knitr)
 opts_chunk$set(fig.width=6.5, fig.height=8, cache=FALSE, message=FALSE)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 library(RankingProject)
 data(TravelTime2011)
 USdata  <- TravelTime2011
@@ -16,7 +16,7 @@ USdata$SE.Print = substring(formatC(USdata$SE.2dec,
                                     format = 'f', digits = 2),
                             first = 2)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Set Colorado as the reference area
 refAbbr <- "CO"
 refRow  <- which(USdata$Abbreviation==refAbbr)
@@ -32,11 +32,11 @@ plotParList <- with(USdata,
                            confLevel = .90, cex = 0.6,
                            plotType = "individual"))
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Individual CIs
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Shaded Columns plot
 plotParList$plotType <- "columns"
 # Specify where to position the "Reference State:" text,
@@ -57,7 +57,7 @@ tableParList[c("columnsPlotRefLine", "col2", "col3")] <- NULL
 # Use full state names in the table for future plots
 tableParList$names <- USdata$State
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Set smaller plot text and lower x-axis label for future plots
 plotParList$cex <- 0.6
 plotParList$thetaLine <- 1.5
@@ -67,7 +67,7 @@ plotParList$plotType <- "individual"
 plotParList$GH <- TRUE
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Double-tiered GH plot:
 # inner tiers are GH CIs,
 # outer tiers are usual 90% CIs
@@ -78,14 +78,14 @@ plotParList$legendX <- 12
 plotParList$legendY <- 53
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Double-tiered GH + Bonferroni plot:
 # inner tiers are usual 90% CIs,
 # outer tiers are 50-way demi-Bonferroni-corrected GH CIs
 plotParList$Bonferroni <- "demi"
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Double-tiered GH + Bonferroni plot:
 # inner tiers are usual 90% CIs,
 # outer tiers are (51 choose 2)-way full-Bonferroni-corrected GH CIs
@@ -94,7 +94,7 @@ RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 # Reset defaults for future plots
 plotParList[c("Bonferroni", "GH", "tiers", "legendX", "legendY")] <- NULL
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # CIs for differences from reference state
 plotParList$plotType <- "difference"
 plotParList$lwdBold <- 2
@@ -102,7 +102,7 @@ RankPlotWithTable(tableParList = tableParList, plotParList = plotParList,
                   annotRefName = USdata$Rank[refRow],
                   annotRefRank = USdata$State[refRow])
 
-## ------------------------------------------------------------------------
+## -----------------------------------------------------------------------------
 # Comparison intervals (Almond et al. 2000)
 plotParList$plotType <- "comparison"
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
