@@ -1,3 +1,7 @@
+# RankingProject 0.3.1
+
+* Patch for missing vignettes: using `R.rsp` to include precompiled, compressed PDFs for vignettes that were missing from previous release.
+
 # RankingProject 0.3.0
 
 * New argument `multcomp.type` in `RankPlot` function allows use of independence assumption when making multiple comparison corrections.
