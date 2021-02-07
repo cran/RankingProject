@@ -1,8 +1,8 @@
 Package: RankingProject
 Type: Package
 Title: The Ranking Project: Visualizations for Comparing Populations
-Version: 0.2.0
-Date: 2020-01-28
+Version: 0.3.0
+Date: 2021-02-07
 Authors@R: c(
     person("Jerzy", "Wieczorek", email = "jerzywieczorek@gmail.com", role = c("cre", "aut")),
     person("Joel", "Beard", role = "ctb"),
@@ -14,19 +14,19 @@ Description: Functions to generate plots and tables for comparing independently-
     for Comparing Populations, Including the Issue of Overlapping Confidence
     Intervals" by Wright, Klein, and Wieczorek (2019)
     <DOI:10.1080/00031305.2017.1392359> and "A Joint Confidence Region for an
-    Overall Ranking of Populations" by Klein, Wright, and Wieczorek (2020, in
-    press).
+    Overall Ranking of Populations" by Klein, Wright, and Wieczorek (2020)
+    <DOI:10.1111/rssc.12402>.
 License: GPL-2
 LazyData: TRUE
 Depends: R (>= 2.10)
 Suggests: knitr (>= 1.15.1), rmarkdown (>= 0.9.6), tikzDevice (>=
         0.10-1)
 VignetteBuilder: knitr
-URL: http://github.com/civilstat/RankingProject
-BugReports: http://github.com/civilstat/RankingProject/issues
-RoxygenNote: 7.0.2
+URL: https://github.com/civilstat/RankingProject
+BugReports: https://github.com/civilstat/RankingProject/issues
+RoxygenNote: 7.1.1
 NeedsCompilation: no
-Packaged: 2020-01-29 18:03:42 UTC; jawieczo
+Packaged: 2021-02-07 06:27:24 UTC; jawieczo
 Author: Jerzy Wieczorek [cre, aut],
   Joel Beard [ctb],
   Andy Liaw [ctb],
@@ -34,4 +34,4 @@ Author: Jerzy Wieczorek [cre, aut],
   Martin Maechler [ctb]
 Maintainer: Jerzy Wieczorek <jerzywieczorek@gmail.com>
 Repository: CRAN
-Date/Publication: 2020-01-29 19:50:05 UTC
+Date/Publication: 2021-02-07 06:40:03 UTC
