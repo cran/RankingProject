@@ -82,17 +82,17 @@ RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 # Double-tiered GH + Bonferroni plot:
 # inner tiers are usual 90% CIs,
 # outer tiers are 50-way demi-Bonferroni-corrected GH CIs
-plotParList$Bonferroni <- "demi"
+plotParList$multcomp.scope <- "demi"
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 
 ## -----------------------------------------------------------------------------
 # Double-tiered GH + Bonferroni plot:
 # inner tiers are usual 90% CIs,
 # outer tiers are (51 choose 2)-way full-Bonferroni-corrected GH CIs
-plotParList$Bonferroni <- "full"
+plotParList$multcomp.scope <- "full"
 RankPlotWithTable(tableParList = tableParList, plotParList = plotParList)
 # Reset defaults for future plots
-plotParList[c("Bonferroni", "GH", "tiers", "legendX", "legendY")] <- NULL
+plotParList[c("multcomp.scope", "GH", "tiers", "legendX", "legendY")] <- NULL
 
 ## -----------------------------------------------------------------------------
 # CIs for differences from reference state
